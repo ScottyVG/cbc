@@ -60,7 +60,10 @@ def course_weeks_count(json_data):
 
     error cases: if the key 'weeks' doesn't exist, should return 0
     """
-    pass
+    if 'weeks' in json_data:
+        return len(json_data['weeks'])
+    else:
+        return 0
 
 
 # Exercise 3
