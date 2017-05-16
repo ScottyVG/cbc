@@ -93,7 +93,12 @@ def course_content_count(json_data):
     error cases: weeks in 'content_units' that are not found in 'weeks' should not be counted
     error cases: if there is no 'weeks' in the course, return an empty dict
     """
-    pass
+    result = json_data['content_units']
+
+    if 'weeks' in json_data:
+        return {key: len(value) for key, value in result.items() if key in json_data['weeks']}
+    else:
+        return {}
 
 
 # Exercise 4
