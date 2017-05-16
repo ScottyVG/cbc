@@ -1,0 +1,4 @@
+DS_Store
+*.pyc
+.env
+./cbc/code/precourse/json/.cache/
