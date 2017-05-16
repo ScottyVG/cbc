@@ -14,7 +14,7 @@ def simple_tdd_function(a,b):
     -------
     int : the sum of those numbers
     """
-    pass
+    return(a + b)
 
 
 # Exercise 1
@@ -119,4 +119,13 @@ def tones_parse_anger(json_data):
     - within the list given by "tone_categories", emotion is not necessarily the first
     - within the list of tones that have "category_id": "emotion_tone", Anger is not necessarily the first
     """
-    pass
+    result = 0.0
+    tones_data = json_data['document_tone']['tone_categories']
+
+    for tones in tones_data:
+        if 'emotion_tone' in tones ['category_id']:
+            for i in tones ['tones']:
+                if 'anger' in i['tone_id']:
+                    result = i['score']
+
+    return result
