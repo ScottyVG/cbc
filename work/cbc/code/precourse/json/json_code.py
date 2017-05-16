@@ -29,7 +29,9 @@ def read_json_file(file_path):
     -------
     dict : a dictionary containing the json structure read from the file.
     """
-    pass
+    json_data = open(file_path).read()
+    data = json.loads(json_data)
+    return data
 
 
 # Exercise 2
