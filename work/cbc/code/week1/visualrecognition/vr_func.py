@@ -149,7 +149,14 @@ def parse_classes(json_data):
     -----
     For an example of the JSON structure, see file 'pytest_data/classifier_output_1.json'
     """
-    pass
+
+    if len(json_data["images"][0]["classifiers"]) == 0:
+        return {}
+    result = set()
+    for classes in json_data["images"][0]["classifiers"][0]["classes"]:
+        result.add(classes["class"])
+
+    return result
 
 
 
